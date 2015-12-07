@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% for category in site.categories %}
+{% assign cat = category[0] %}
+<div class='container-fluid category'>
+  <h1><small>{{cat | capitalize }}</small></h1>
+    <div class='carousel slide' id="{{ cat | replace:" ","-"}}" data-interval="false">
+      <div class='carousel-inner'>
+  {% for post in site.categories.[cat] %}
+  {% unless post.draft %}
+    {% assign mod = forloop.index | modulo:6 %}
+    {% if mod == 1 %}
+      <div class='item {% if forloop.index < 6 %}active{% endif %}'>
+        <div class='row'>
+    {% endif %}
+      <div class='col-sm-2'>
+        <a class='thumbnail show-nav' href="{{ site.baseurl }}{{ post.url}}">
+          <img src="{{ post.image }}"></img>
+          <span class='overlay'>{{ post.title }}</span>
+        </a>
+      </div>
+    {% if mod == 0 %}
+      </div></div>
+    {% endif %}
+  {% endunless %}
+  {% endfor %}                      
+  {% if mod != 0 %}
+      </div></div>
+  {% endif %}
+    </div>
+    <a class="left carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="next">›</a>
+  </div>
+</div>
+{% endfor %}
+<div class='container-fluid' id='main-info'>
+
+</div>

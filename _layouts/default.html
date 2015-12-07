@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    <meta name="author" content="{{ site.name }}" />
+    <meta name="description" content="{{ site.description }}">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- Bootstrap -->    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>    
+
+    <script src="{{ site.baseurl }}/custom.js"></script>
+    <link rel='stylesheet' type='text/css' href="{{ site.baseurl }}/custom.css" />
+    <!--<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />-->
+    <link rel="shortcut icon" type="image/png" href="/images/favicon-bug.ico"/>
+  </head>
+  <body>
+    <div class='container-fluid top-header'>
+      <div class=''>
+        <h1>{{ site.name }}</h1>
+      </div>
+    </div>
+    {{ content }}
+  </body>
+</html>
