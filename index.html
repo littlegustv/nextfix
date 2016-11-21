@@ -6,33 +6,33 @@ layout: default
 {% assign cat = category[0] %}
 <div class='container-fluid category'>
   <h1><small>{{cat | capitalize }}</small></h1>
-    <div class='carousel slide' id="{{ cat | replace:" ","-"}}" data-interval="false">
-      <div class='carousel-inner'>
+  <tbody class='carousel slide' id="{{ cat | replace:" ","-"}}" data-interval="false">
+    <tr class='carousel-inner'>
   {% for post in site.categories.[cat] %}
   {% unless post.draft %}
     {% assign mod = forloop.index | modulo:6 %}
     {% if mod == 1 %}
-      <div class='item {% if forloop.index < 6 %}active{% endif %}'>
-        <div class='row'>
+      <td class='item {% if forloop.index < 6 %}active{% endif %}'>
     {% endif %}
-      <div class='col-sm-2'>
+      <div class='object'>
         <a class='thumbnail show-nav' href="{{ site.baseurl }}{{ post.url}}">
           <img src="{{ post.image }}"></img>
           <span class='overlay'>{{ post.title }}</span>
         </a>
       </div>
     {% if mod == 0 %}
-      </div></div>
+      </td>
     {% endif %}
   {% endunless %}
   {% endfor %}                      
   {% if mod != 0 %}
-      </div></div>
+      </td>
   {% endif %}
-    </div>
+    </tr>
+  </tbody>
     <a class="left carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="prev">‹</a>
     <a class="right carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="next">›</a>
-  </div>
+  </table>
 </div>
 {% endfor %}
 <div class='container-fluid' id='main-info'>
