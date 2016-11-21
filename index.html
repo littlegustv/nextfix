@@ -4,7 +4,7 @@ layout: default
 
 {% for category in site.categories %}
 {% assign cat = category[0] %}
-<div class='container-fluid category'>
+<table class='container-fluid category table'>
   <h1><small>{{cat | capitalize }}</small></h1>
   <tbody class='carousel slide' id="{{ cat | replace:" ","-"}}" data-interval="false">
     <tr class='carousel-inner'>
@@ -33,7 +33,7 @@ layout: default
     <a class="left carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="prev">‹</a>
     <a class="right carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="next">›</a>
   </table>
-</div>
+</table>
 {% endfor %}
 <div class='container-fluid' id='main-info'>
 
