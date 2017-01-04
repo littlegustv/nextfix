@@ -22,15 +22,16 @@ body {
     padding: 0px;
 }
 .overlay {
-	text-align: center;
+    text-align: justify;
     width: 100%;
     display: block;
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    top: -135px;
+    z-index: 12;
     color: white;
-    background: rgba(0,0,0,0.5);
+    background: linear-gradient(to top, black 50%, transparent);
     font-size: 20px;
-    opacity: 0;
+    /* opacity: 0; */
     -webkit-transition: opacity 1s;
 }
 .show-nav:hover > .overlay
@@ -78,4 +79,21 @@ body {
     margin-top: 5px;
     margin-bottom: 10px;
     margin-left: 5px;
+}
+td.item {
+	max-height: 160px;
+	overflow: hidden;
+}
+.object {
+}
+.title {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: relative;
+    bottom: -56px;
+    font-size: 40px;
+    color: white;
+    background-color: rgba(255,255,255,0.6);
+    color: black;
 }

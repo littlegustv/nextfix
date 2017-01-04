@@ -1,8 +1,10 @@
 ---
 layout: post
-title: Broadchurch
-image: http://images.amcnetworks.com/bbcamerica.com/wp-content/blogs.dir/119/files/2013/06/Broadchurch_Ep01_4.jpg
-categories: ["Recently Added", "Mystery"]
+title: Ubermench
+image: ubermensch.png
+font: serif
 ---
 
-David Tennant as Doctor Who in the town of Broadchurch.  Creepy music & children.
+Jason Stathem is just trying to live a normal life as an Uber driver when the six year old girl he is driving is kidnapped from his car.  Vowing revenge, he embarks on an epic martial-arts quest infused with some clumsy social commentary about the freelance economy.
+
+<em>Coming to Netflix and Hulu on January 3rd, 2017</em>

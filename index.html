@@ -2,39 +2,15 @@
 layout: default
 ---
 
-{% for category in site.categories %}
-{% assign cat = category[0] %}
-<div class='container-fluid category'>
-  <h1><small>{{cat | capitalize }}</small></h1>
-  <tbody class='carousel slide' id="{{ cat | replace:" ","-"}}" data-interval="false">
-    <tr class='carousel-inner'>
-  {% for post in site.categories.[cat] %}
-  {% unless post.draft %}
-    {% assign mod = forloop.index | modulo:6 %}
-    {% if mod == 1 %}
-      <td class='item {% if forloop.index < 6 %}active{% endif %}'>
-    {% endif %}
-      <div class='object'>
-        <a class='thumbnail show-nav' href="{{ site.baseurl }}{{ post.url}}">
-          <img src="{{ post.image }}"></img>
-          <span class='overlay'>{{ post.title }}</span>
-        </a>
-      </div>
-    {% if mod == 0 %}
-      </td>
-    {% endif %}
-  {% endunless %}
-  {% endfor %}                      
-  {% if mod != 0 %}
-      </td>
-  {% endif %}
-    </tr>
-  </tbody>
-    <a class="left carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="prev">‹</a>
-    <a class="right carousel-control" href="#{{ cat | replace:" ","-"}}" data-slide="next">›</a>
-  </table>
+{% for post in site.posts %}
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="object">
+      <span class="title" style="font-family: {{ post.font }}">{{ post.title }}</span>
+      <img src="{{ site.baseurl }}/images/{{ post.image }}"></img>
+      <span class='overlay'>{{ post.content }}</span>
+    </div>
+  </div>
 </div>
 {% endfor %}
-<div class='container-fluid' id='main-info'>
-
-</div>
