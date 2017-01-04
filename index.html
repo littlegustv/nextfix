@@ -6,10 +6,13 @@ layout: default
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6">
-    <div class="object">
+    <div class="object" style="background-image: url(' {{ site.baseurl }}/images/{{ post.image }} ');">
       <span class="title" style="font-family: {{ post.font }}">{{ post.title }}</span>
-      <img src="{{ site.baseurl }}/images/{{ post.image }}"></img>
-      <span class='overlay'>{{ post.content }}</span>
+      <span class="image"></span>
+      <span class='overlay'>
+        {{ post.content }}
+        <p class="text-center text-muted"><small>Available {{ post.date | date: '%B %d, %Y' }}</small></p>
+      </span>
     </div>
   </div>
 </div>
